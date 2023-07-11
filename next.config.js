@@ -3,7 +3,7 @@ const nextConfig = {
   experimental: {
     serverActions: true,
   },
-  output: "standalone",
+  // output: "standalone",
   async headers() {
     return [
       {
