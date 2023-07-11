@@ -21,13 +21,15 @@ export async function GET(request: Request) {
   }
 
   const { searchParams } = new URL(request.url);
+  let postId: string | null = searchParams.get("id");
   const url: string | null = searchParams.get("url");
-  let postId;
 
-  try {
-    postId = getPostId(url);
-  } catch (error: any) {
-    return handleError(error);
+  if (!postId) {
+    try {
+      postId = getPostId(url);
+    } catch (error: any) {
+      return handleError(error);
+    }
   }
 
   try {
