@@ -78,5 +78,5 @@ export const fetchFromPage = async ({ postUrl, timeout }: FetchPostProps) => {
   const json = JSON.parse(jsonText);
   // const formattedJson = formatPageJson(json);
   // return formattedJson;
-  return json
+  return json;
 };
